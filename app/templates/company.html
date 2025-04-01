@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block title %} Ant Colony Optimization {% endblock %}
+
+{% block content %}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+  <div class="az-content-breadcrumb">
+    <span>Components</span>
+    <span>Tables</span>
+    <span>Basic Tables</span>
+  </div>
+  <h2 class="az-content-title">Basic Tables</h2>
+
+  <div class="az-content-label mg-b-5">Simple Table</div>
+  <p class="mg-b-20">Using the most basic table markup.</p>
+
+  <div class="table-responsive">
+    <table id="datatable" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Listing Date</th>
+          <th>Shares</th>
+          <th>Listing Board</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table_data %}
+        <tr>
+          <td>{{ loop.index }}</td>  <!-- Menampilkan nomor urut -->
+          <td>{{ row.code }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.listing_date }}</td>
+          <td>{{ row.shares }}</td>
+          <td>{{ row.listing_board }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div><!-- table-responsive -->
+
+  {% endblock %}
