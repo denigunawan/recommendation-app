@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %} Sectors {% endblock %}
+
+{% block content %}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+  <div class="az-content-breadcrumb">
+    <span>Recommendation</span>
+    <span>Sectors</span>
+    <span>Data</span>
+  </div>
+  <h2 class="az-content-title">List Of Sectors</h2>
+  <hr>
+
+  <div class="table-responsive">
+    <table id="datatable" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table_data %}
+        <tr>
+          <td>{{ loop.index }}</td> <!-- Menampilkan nomor urut -->
+          <td>{{ row.name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div><!-- table-responsive -->
+</div>
+  {% endblock %}
